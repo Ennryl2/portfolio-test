@@ -1,0 +1,26 @@
+{
+  "name": "Portfolio",
+  "version": "1.0.0",
+  "description": "Portfolio",
+  "main": "index.js",
+  "scripts": {
+    "watch:sass": "sass sass/style.scss css/style.css --watch",
+    "start": "npm-run-all --parallel watch:sass",
+    "compile:sass": "sass sass/style.scss css/style.comp.css",
+    "prefix:css": "postcss --use autoprefixer -b 'last 10 versions' css/style.comp.css -o css/style.style.prefix.css",
+    "compress:css": "sass css/style.prefix.css css/style.css --output-style compressed",
+    "build:css": "npm-run-all compile:sass prefix:css compress:css"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "autoprefixer": "^10.4.7",
+    "bootstrap": "^5.2.0-beta1",
+    "concat": "^1.0.3",
+    "i": "^0.3.7",
+    "node-sass": "^7.0.1",
+    "npm": "^8.14.0",
+    "npm-run-all": "^4.1.5",
+    "postcss-cli": "^10.0.0"
+  }
+}
